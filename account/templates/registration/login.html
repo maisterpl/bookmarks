@@ -20,6 +20,7 @@
             <input type="hidden" name="text" value="{{ next }}" />
             <p><input type="submit" value="Zaloguj"></p>
         </form>
+        <p><a href="{% url "password_reset" %}">Zapomniałeś hasła?</a></p>
     </div>
 
 {% endblock content %}
