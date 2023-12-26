@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-gv19e$%3(o5r@kxfx(o8aojbbc6w%6@jzma(hq&8k^za@5i7df
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', 'moja-witryna.pl',]
 
 
 # Application definition
@@ -34,6 +34,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # my application:
     'account',
+    # others app
+    'social_django',
     # django app:
     'django.contrib.admin',
     'django.contrib.auth',
@@ -138,6 +140,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backend.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
 ]
