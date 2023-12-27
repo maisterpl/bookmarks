@@ -34,8 +34,11 @@ ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', 'moja-witryna.pl',]
 INSTALLED_APPS = [
     # my application:
     'account',
+    
     # others app
     'social_django',
+    'django_extensions',
+
     # django app:
     'django.contrib.admin',
     'django.contrib.auth',
@@ -142,4 +145,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social.backends.facebook.Facebook20Auth2',
 ]
+
+SOCIAL_AUTH_FACBOOK_KEY = '349071171177057'
+SOCIAL_AUTH_FACEBOOK_SECRET = '1c63bf78322850955bbda7aeb5289e92'
+SOCIAL_AUTH_FACBOOK_SCOPE = ['email']
