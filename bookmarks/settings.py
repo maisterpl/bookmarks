@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'bookmarks.urls'
@@ -145,9 +146,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
-    'social.backends.facebook.Facebook20Auth2',
+    # 'social.backends.facebook.Facebook20Auth2',
+    # 'social_core.backends.google.GoogleOAuth2',
 ]
+
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
 SOCIAL_AUTH_FACBOOK_KEY = '349071171177057'
 SOCIAL_AUTH_FACEBOOK_SECRET = '1c63bf78322850955bbda7aeb5289e92'
 SOCIAL_AUTH_FACBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'AIzaSyDQMutG0AmHiqL8vyOCCYv4YR72tUaafIk'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
