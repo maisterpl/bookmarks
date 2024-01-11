@@ -27,7 +27,8 @@
 
     <div class='social'>
         <ul>
-            <li class='facebook'><a href={% url "social:begin" "facebook" %}>Zalogun się za pomocą konta Facebook</a></li>
+            <li class='facebook'><a href="{% url "social:begin" "facebook" %}">Zalogun się za pomocą konta Facebook</a></li>
+            <li class='google'><a href="{% url "social:begin" "google-oauth2" %}">Zaloguj się za pomocą konta Google</a></li>
         </ul>
     </div>
 
