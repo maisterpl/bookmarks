@@ -35,9 +35,7 @@ INSTALLED_APPS = [
     # my application:
     'account',
     
-    # others app
-    'social_django',
-    'django_extensions',
+
 
     # django app:
     'django.contrib.admin',
@@ -46,6 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # others app
+    'social_django',
+    'django_extensions',    
 ]
 
 MIDDLEWARE = [
@@ -56,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'bookmarks.urls'
@@ -71,6 +75,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -114,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pl' # 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC+2' # utc, for dont have the ssl protocol error change the time zone
 
 USE_I18N = True
 
@@ -145,9 +152,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
-    'social.backends.facebook.Facebook20Auth2',
+    # 'social.backends.facebook.Facebook20Auth2',
+    'social_core.backends.facebook.FacebookOAuth2',
 ]
 
-SOCIAL_AUTH_FACBOOK_KEY = '349071171177057'
-SOCIAL_AUTH_FACEBOOK_SECRET = '1c63bf78322850955bbda7aeb5289e92'
+SOCIAL_AUTH_FACBOOK_KEY = '327955753457422'
+SOCIAL_AUTH_FACEBOOK_SECRET = '41db49814fe453505431292de1d2a017'
 SOCIAL_AUTH_FACBOOK_SCOPE = ['email']
