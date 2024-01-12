@@ -121,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pl' # 'en-us'
 
-TIME_ZONE = 'UTC+2' # utc, for dont have the ssl protocol error change the time zone
+TIME_ZONE = 'Europe/Warsaw' # 'UTC+2' # utc, for dont have the ssl protocol error change the time zone
 
 USE_I18N = True
 
@@ -156,6 +156,6 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
 ]
 
-SOCIAL_AUTH_FACBOOK_KEY = '327955753457422'
-SOCIAL_AUTH_FACEBOOK_SECRET = '41db49814fe453505431292de1d2a017'
+SOCIAL_AUTH_FACEBOOK_KEY = '934335561383227'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'f7903e415e5175a26fc5311f8ba2c847'
 SOCIAL_AUTH_FACBOOK_SCOPE = ['email']
